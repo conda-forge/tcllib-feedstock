@@ -1,6 +1,6 @@
 {% set name = "tcllib" %}
-{% set version = "1.20" %}
-{% set sha256 = "e3b097475bcb93c4439df4a088daa59592e1937beee2a2c8495f4f0303125d71" %}
+{% set version = "1.21" %}
+{% set sha256 = "46b2bb5ec8049363ae01645af11bda3bdb5db10629e807d81d1ad46cd1bead50" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  script: "tclsh installer.tcl -no-wait -no-gui -no-html -no-nroff -no-examples"
+  script: tclsh installer.tcl -no-wait -no-gui -no-html -no-nroff -no-examples
 
 requirements:
   host:
@@ -31,7 +31,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: license.terms
-  summary: 'Tcllib is a collection of utility modules for Tcl.'
+  summary: Tcllib is a collection of utility modules for Tcl.
   doc_url: https://core.tcl-lang.org/tcllib/doc/trunk/embedded/md/toc.md
 
 extra:
