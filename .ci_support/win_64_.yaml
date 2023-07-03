@@ -2,9 +2,6 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-pin_run_as_build:
-  tk:
-    max_pin: x.x
 target_platform:
 - win-64
 tk:
