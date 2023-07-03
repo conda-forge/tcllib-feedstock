@@ -23,8 +23,8 @@ requirements:
 test:
   source_files:
     - examples
-  commands:
-    - tclsh examples/logger/logtofile.tcl
+  commands:                                 # [not arm64]
+    - tclsh examples/logger/logtofile.tcl   # [not arm64]
 
 about:
   home: https://core.tcl-lang.org/tcllib/doc/trunk/embedded/index.md
