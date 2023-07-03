@@ -15,7 +15,7 @@ build:
   script: tclsh installer.tcl -no-wait -no-gui -no-html -no-nroff -no-examples
 
 requirements:
-  host:
+  build:
     - tk
   run:
     - tk
