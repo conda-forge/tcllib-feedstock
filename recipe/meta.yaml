@@ -9,9 +9,11 @@ package:
 source:
   url: https://core.tcl-lang.org/tcllib/uv/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+  - installer-env-prefix.patch
 
 build:
-  number: 1
+  number: 2
   script: tclsh installer.tcl -no-wait -no-gui -no-html -no-nroff -no-examples
 
 requirements:
@@ -23,8 +25,8 @@ requirements:
 test:
   source_files:
     - examples
-  commands:                                 # [not arm64]
-    - tclsh examples/logger/logtofile.tcl   # [not arm64]
+  commands:
+    - tclsh examples/logger/logtofile.tcl
 
 about:
   home: https://core.tcl-lang.org/tcllib/doc/trunk/embedded/index.md
