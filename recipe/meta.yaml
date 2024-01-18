@@ -13,7 +13,7 @@ source:
   - installer-env-prefix.patch
 
 build:
-  number: 1
+  number: 2
   script: tclsh installer.tcl -no-wait -no-gui -no-html -no-nroff -no-examples
 
 requirements:
