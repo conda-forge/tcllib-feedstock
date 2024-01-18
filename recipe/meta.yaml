@@ -9,6 +9,8 @@ package:
 source:
   url: https://core.tcl-lang.org/tcllib/uv/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+  - installer-env-prefix.patch
 
 build:
   number: 1
