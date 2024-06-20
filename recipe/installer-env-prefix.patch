@@ -1,0 +1,30 @@
+Index: tcllib-1.21/installer.tcl
+===================================================================
+--- tcllib-1.21.orig/installer.tcl
++++ tcllib-1.21/installer.tcl
+@@ -280,11 +280,17 @@ proc defaults {} {
+ 	# Starkit, or unwrapped. Derive defaults location from the
+ 	# location of the executable running the installer, or the
+ 	# location of its library.
++	# If $PREFIX is defined in the environment, it overrides auto-detection
+ 
+ 	# For a starkit [info library] is inside the running
+ 	# tclkit. Detect this and derive the location from the
+ 	# location of the executable itself for that case.
+ 
++	if {[info exists ::env(PREFIX)]} {
++		set basedir $::env(PREFIX)
++		set libdir [file join $basedir lib]
++		set bindir [file join $basedir bin]
++	} else {
+ 	if {[string match [info nameofexecutable]* [info library]]} {
+ 	    # Starkit
+ 	    set libdir [file join [file dirname [file dirname [info nameofexecutable]]] lib]
+@@ -297,6 +303,7 @@ proc defaults {} {
+ 
+ 	set basedir [file dirname $libdir]
+ 	set bindir  [file join $basedir bin]
++	}
+ 
+ 	if {[string compare $tcl_platform(platform) windows] == 0} {
+ 	    set mandir  {}
