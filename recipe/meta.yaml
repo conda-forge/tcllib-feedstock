@@ -16,9 +16,9 @@ build:
 
 requirements:
   build:
-    - tk
+    - tk >=8.5
   run:
-    - tk
+    - tk >=8.5
 
 test:
   source_files:
