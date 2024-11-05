@@ -1,6 +1,6 @@
 {% set name = "tcllib" %}
-{% set version = "1.21" %}
-{% set sha256 = "46b2bb5ec8049363ae01645af11bda3bdb5db10629e807d81d1ad46cd1bead50" %}
+{% set version = "2.0" %}
+{% set sha256 = "590263de0832ac801255501d003441a85fb180b8ba96265d50c4a9f92fde2534" %}
 
 package:
   name: {{ name|lower }}
@@ -11,19 +11,19 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   script: tclsh installer.tcl -no-wait -no-gui -no-html -no-nroff -no-examples
 
 requirements:
   build:
-    - tk
+    - tk >=8.5
   run:
-    - tk
+    - tk >=8.5
 
 test:
   source_files:
     - examples
-  commands:                                 # [not arm64]
+  commands:   # [not arm64]
     - tclsh examples/logger/logtofile.tcl   # [not arm64]
 
 about:
